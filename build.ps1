@@ -153,7 +153,7 @@ $items = @{
 	};
 
 	'cairo' = @{
-		'ArchiveUrl' = 'https://dl.hexchat.net/gtk-win32/src/cairo-1.14.6.tar.xz'
+		'ArchiveUrl' = 'https://www.cairographics.org/releases/cairo-1.14.10.tar.xz'
 		'Dependencies' = @('fontconfig', 'glib', 'pixman')
 	};
 
