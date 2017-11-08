@@ -218,7 +218,7 @@ $items = @{
 	};
 
 	'libxml2' = @{
-		'ArchiveUrl' = 'https://dl.hexchat.net/gtk-win32/src/libxml2-2.9.4.tar.gz'
+		'ArchiveUrl' = 'ftp://xmlsoft.org/libxml2/libxml2-2.9.7.tar.gz'
 		'Dependencies' = @('win-iconv')
 	};
 
