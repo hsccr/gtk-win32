@@ -168,7 +168,7 @@ $items = @{
 	};
 
 	'freetype' = @{
-		'ArchiveUrl' = 'https://dl.hexchat.net/gtk-win32/src/freetype-2.6.5.tar.bz2'
+		'ArchiveUrl' = 'http://download.savannah.gnu.org/releases/freetype/freetype-2.8.tar.gz'
 		'Dependencies' = @()
 	};
 
