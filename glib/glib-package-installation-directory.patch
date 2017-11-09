@@ -1,22 +1,8 @@
-From 03ad717497c4669970a8f335961272af449d277c Mon Sep 17 00:00:00 2001
-From: TingPing <tingping@tingping.se>
-Date: Sun, 9 Nov 2014 00:11:13 -0500
-Subject: [PATCH] Fix g_win32_get_package_installation_directory_of_module()
- handling some paths containing bin/lib
-
----
- glib/gwin32.c | 30 +++++++++---------------------
- 1 file changed, 9 insertions(+), 21 deletions(-)
-
 diff --git a/glib/gwin32.c b/glib/gwin32.c
-index ffc5fe2..f495bee 100644
+index cc6da5f..9c51e2c 100644
 --- a/glib/gwin32.c
 +++ b/glib/gwin32.c
-@@ -249,32 +249,20 @@ g_win32_get_package_installation_directory_of_module (gpointer hmodule)
- 
-   filename = g_utf16_to_utf8 (wc_fn, -1, NULL, NULL, NULL);
- 
-+  /* Strip off trailing module/executable */
+@@ -269,29 +269,16 @@ g_win32_get_package_installation_directory_of_module (gpointer hmodule)
    if ((p = strrchr (filename, G_DIR_SEPARATOR)) != NULL)
      *p = '\0';
  
@@ -28,20 +14,21 @@ index ffc5fe2..f495bee 100644
 -      if (p == NULL)
 -        break;
 -
-+  /* Strip off trailing bin/lib */
-+  if ((p = strrchr (filename, G_DIR_SEPARATOR)) != NULL)
-+  {
-+    if (g_ascii_strcasecmp (p + 1, "bin") == 0 ||
-+        g_ascii_strcasecmp (p + 1, "lib") == 0)
-       *p = '\0';
-+  }
- 
+-      *p = '\0';
+-
 -      if (g_ascii_strcasecmp (p + 1, "bin") == 0 ||
 -          g_ascii_strcasecmp (p + 1, "lib") == 0)
 -        break;
 -    }
 -  while (p != NULL);
--
++  /* Strip off trailing bin/lib */
++  if ((p = strrchr (filename, G_DIR_SEPARATOR)) != NULL)
++  {
++    if (g_ascii_strcasecmp (p + 1, "bin") == 0 ||
++        g_ascii_strcasecmp (p + 1, "lib") == 0)
++       *p = '\0';
++  }
+ 
 -  if (p == NULL)
 -    {
 -      g_free (retval);
@@ -54,6 +41,3 @@ index ffc5fe2..f495bee 100644
  
  #ifdef G_WITH_CYGWIN
    /* In Cygwin we need to have POSIX paths */
--- 
-2.1.0
-

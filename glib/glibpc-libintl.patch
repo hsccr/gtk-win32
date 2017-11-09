@@ -1,6 +1,8 @@
---- glib.orig/build/win32/glibpc.py	2016-03-15 19:19:29.000000000 -0700
-+++ glib.orig/build/win32/glibpc.py	2016-04-05 18:35:40.351402900 -0700
-@@ -26,7 +26,7 @@
+diff --git a/win32/glibpc.py b/win32/glibpc.py
+index b04dc24..222d991 100644
+--- a/win32/glibpc.py
++++ b/win32/glibpc.py
+@@ -26,7 +26,7 @@ def main(argv):
                	          'glib-mkenums': 'perl ${exec_prefix}/bin/glib-mkenums',
                	          'gobject-query': '${exec_prefix}/bin/gobject-query',
                	          '@PCRE_REQUIRES@': '',
