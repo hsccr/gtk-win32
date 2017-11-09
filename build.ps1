@@ -183,7 +183,7 @@ $items = @{
 	};
 
 	'glib' = @{
-		'ArchiveUrl' = 'https://dl.hexchat.net/gtk-win32/src/glib-2.48.2.tar.xz'
+		'ArchiveUrl' = 'https://download.gnome.org/sources/glib/2.54/glib-2.54.2.tar.xz'
 		'Dependencies' = @('gettext-runtime', 'libffi', 'zlib')
 	};
 
