@@ -173,7 +173,7 @@ $items = @{
 	};
 
 	'gdk-pixbuf' = @{
-		'ArchiveUrl' = 'https://dl.hexchat.net/gtk-win32/src/gdk-pixbuf-2.34.0.tar.xz'
+		'ArchiveUrl' = 'https://ftp.gnome.org/pub/gnome/sources/gdk-pixbuf/2.36/gdk-pixbuf-2.36.11.tar.xz'
 		'Dependencies' = @('glib', 'libpng', 'gobject-introspection')
 	};
 
@@ -193,7 +193,7 @@ $items = @{
 	};
 
 	'gtk' = @{
-		'ArchiveUrl' = 'https://dl.hexchat.net/gtk-win32/src/gtk+-2.24.30.tar.xz'
+		'ArchiveUrl' = 'https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.31.tar.xz'
 		'Dependencies' = @('atk', 'gdk-pixbuf', 'pango', 'gobject-introspection')
 	};
 
