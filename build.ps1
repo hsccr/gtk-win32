@@ -198,8 +198,8 @@ $items = @{
 	};
 
 	'harfbuzz' = @{
-		'ArchiveUrl' = 'https://dl.hexchat.net/gtk-win32/src/harfbuzz-1.3.0.tar.bz2'
-		'Dependencies' = @('freetype', 'glib')
+		'ArchiveUrl' = 'https://www.freedesktop.org/software/harfbuzz/release/harfbuzz-1.6.3.tar.bz2'
+		'Dependencies' = @()
 	};
 
 	'lgi' = @{
@@ -672,18 +672,10 @@ $items['gtk'].BuildScript = {
 }
 
 $items['harfbuzz'].BuildScript = {
+
 	$originalEnvironment = Swap-Environment $vcvarsEnvironment
 
-	Get-ChildItem -Recurse *.cc, *.hh | %{
-		Fix-C4819 $_.FullName
-	}
-
-	Push-Location .\win32
-
-	Exec nmake /f Makefile.vc CFG=release PYTHON=..\..\..\..\python-2.7\$platform\python.exe PERL=..\..\..\..\perl-5.20\$platform\bin\perl.exe PREFIX=`"$workingDirectory\..\..\gtk\$platform`" FREETYPE=1 GOBJECT=1
-	Exec nmake /f Makefile.vc install CFG=release PREFIX=`"$workingDirectory\..\..\gtk\$platform`" FREETYPE=1 GOBJECT=1
-
-	Pop-Location
+	Exec msbuild build\$platform\vs14\harfbuzz.sln /p:Platform=$platform /p:Configuration=Release /nodeReuse:True $windowsTargetPlatformVersion
 
 	[void] (Swap-Environment $originalEnvironment)
 }
