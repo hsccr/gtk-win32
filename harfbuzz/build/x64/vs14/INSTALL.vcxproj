@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{2ED3A907-A184-381C-BF3F-FBF1442943AB}</ProjectGUID>
+    <ProjectGUID>{4E69F76E-3829-382E-93A2-B3C2D0E8AB96}</ProjectGUID>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>INSTALL</ProjectName>
@@ -65,7 +65,7 @@
     </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\gtk-build\build\Win32\harfbuzz\src;C:\gtk-build\build\Win32\harfbuzz\build\x64\vs14\src;C:\gtk-build\build\Win32\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\gtk-build\build\x64\harfbuzz\src;C:\gtk-build\build\x64\harfbuzz\build\x64\vs14\src;C:\gtk-build\build\x64\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -87,7 +87,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\gtk-build\build\Win32\harfbuzz\src;C:\gtk-build\build\Win32\harfbuzz\build\x64\vs14\src;C:\gtk-build\build\Win32\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\gtk-build\build\x64\harfbuzz\src;C:\gtk-build\build\x64\harfbuzz\build\x64\vs14\src;C:\gtk-build\build\x64\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -109,7 +109,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\gtk-build\build\Win32\harfbuzz\src;C:\gtk-build\build\Win32\harfbuzz\build\x64\vs14\src;C:\gtk-build\build\Win32\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\gtk-build\build\x64\harfbuzz\src;C:\gtk-build\build\x64\harfbuzz\build\x64\vs14\src;C:\gtk-build\build\x64\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -131,7 +131,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\gtk-build\build\Win32\harfbuzz\src;C:\gtk-build\build\Win32\harfbuzz\build\x64\vs14\src;C:\gtk-build\build\Win32\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\gtk-build\build\x64\harfbuzz\src;C:\gtk-build\build\x64\harfbuzz\build\x64\vs14\src;C:\gtk-build\build\x64\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -152,7 +152,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\gtk-build\build\Win32\harfbuzz\build\x64\vs14\CMakeFiles\612cf521fa58a25e7816ddcc80fff893\INSTALL_force.rule">
+    <CustomBuild Include="C:\gtk-build\build\x64\harfbuzz\build\x64\vs14\CMakeFiles\3a698257335b9bef6bab646f2644edda\INSTALL_force.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 cd .
@@ -163,8 +163,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/gtk-build/build/Win32/harfbuzz/build/x64/vs14/CMakeFiles/612cf521fa58a25e7816ddcc80fff893/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\gtk-build\build\Win32\harfbuzz\build\x64\vs14\CMakeFiles\INSTALL_force</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/gtk-build/build/x64/harfbuzz/build/x64/vs14/CMakeFiles/3a698257335b9bef6bab646f2644edda/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\gtk-build\build\x64\harfbuzz\build\x64\vs14\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
@@ -176,8 +176,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/gtk-build/build/Win32/harfbuzz/build/x64/vs14/CMakeFiles/612cf521fa58a25e7816ddcc80fff893/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\gtk-build\build\Win32\harfbuzz\build\x64\vs14\CMakeFiles\INSTALL_force</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/gtk-build/build/x64/harfbuzz/build/x64/vs14/CMakeFiles/3a698257335b9bef6bab646f2644edda/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\gtk-build\build\x64\harfbuzz\build\x64\vs14\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
@@ -189,8 +189,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/gtk-build/build/Win32/harfbuzz/build/x64/vs14/CMakeFiles/612cf521fa58a25e7816ddcc80fff893/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\gtk-build\build\Win32\harfbuzz\build\x64\vs14\CMakeFiles\INSTALL_force</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/gtk-build/build/x64/harfbuzz/build/x64/vs14/CMakeFiles/3a698257335b9bef6bab646f2644edda/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\gtk-build\build\x64\harfbuzz\build\x64\vs14\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
@@ -202,17 +202,17 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/gtk-build/build/Win32/harfbuzz/build/x64/vs14/CMakeFiles/612cf521fa58a25e7816ddcc80fff893/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\gtk-build\build\Win32\harfbuzz\build\x64\vs14\CMakeFiles\INSTALL_force</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/gtk-build/build/x64/harfbuzz/build/x64/vs14/CMakeFiles/3a698257335b9bef6bab646f2644edda/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\gtk-build\build\x64\harfbuzz\build\x64\vs14\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:/gtk-build/build/Win32/harfbuzz/build/x64/vs14/ZERO_CHECK.vcxproj">
-      <Project>AEF93FCB-2D05-3B17-8952-27D43BA1AF81</Project>
+    <ProjectReference Include="C:/gtk-build/build/x64/harfbuzz/build/x64/vs14/ZERO_CHECK.vcxproj">
+      <Project>2D090D79-1DFF-391F-8B9C-605C071CEDB9</Project>
     </ProjectReference>
-    <ProjectReference Include="C:/gtk-build/build/Win32/harfbuzz/build/x64/vs14/ALL_BUILD.vcxproj">
-      <Project>6291D75D-F0E4-3C6E-B955-5F7B46306E07</Project>
+    <ProjectReference Include="C:/gtk-build/build/x64/harfbuzz/build/x64/vs14/ALL_BUILD.vcxproj">
+      <Project>C3576787-E97B-3C9D-972A-8EE2D9674969</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
