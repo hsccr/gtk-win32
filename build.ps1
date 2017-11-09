@@ -672,12 +672,26 @@ $items['gtk'].BuildScript = {
 }
 
 $items['harfbuzz'].BuildScript = {
+	$packageDestination = "$PWD-rel"
+	Remove-Item -Recurse $packageDestination -ErrorAction Ignore
 
 	$originalEnvironment = Swap-Environment $vcvarsEnvironment
 
 	Exec msbuild build\$platform\vs14\harfbuzz.sln /p:Platform=$platform /p:Configuration=Release /nodeReuse:True $windowsTargetPlatformVersion
 
 	[void] (Swap-Environment $originalEnvironment)
+
+	New-Item -Type Directory $packageDestination\lib
+	Copy-Item `
+		.\build\$platform\vs14\Release\harfbuzz.lib `
+		$packageDestination\lib
+
+	New-Item -Type Directory $packageDestination\include\harfbuzz
+	Copy-Item `
+		.\src\*.h `
+		$packageDestination\include\harfbuzz
+
+	Package $packageDestination
 }
 
 $items['lgi'].BuildScript = {
