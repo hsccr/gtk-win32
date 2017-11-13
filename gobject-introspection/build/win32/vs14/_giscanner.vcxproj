@@ -75,6 +75,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
+      <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\..\giscanner;$(PythonDir)\include;$(PythonDir)\PC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>%(ForcedIncludeFiles);io.h</ForcedIncludeFiles>
       <PreprocessorDefinitions>_DEBUG;YY_NO_UNISTD_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -89,13 +90,14 @@
     <Link>
       <OutputFile>$(OutDir)$(ProjectName).pyd</OutputFile>
       <AdditionalLibraryDirectories>$(PythonDir)\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <AdditionalIncludeDirectories>..\..\..\giscanner;$(PythonDir)\include;$(PythonDir)\PC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>%(ForcedIncludeFiles);io.h</ForcedIncludeFiles>
@@ -110,7 +112,7 @@
     <Link>
       <OutputFile>$(OutDir)$(ProjectName).pyd</OutputFile>
       <AdditionalLibraryDirectories>$(PythonDir)\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -122,6 +124,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
+      <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\..\giscanner;$(PythonDirX64)\include;$(PythonDirX64)\PC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>%(ForcedIncludeFiles);io.h</ForcedIncludeFiles>
       <PreprocessorDefinitions>_DEBUG;YY_NO_UNISTD_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -136,7 +139,7 @@
     <Link>
       <OutputFile>$(OutDir)$(ProjectName).pyd</OutputFile>
       <AdditionalLibraryDirectories>$(PythonDirX64)\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
@@ -146,6 +149,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <AdditionalIncludeDirectories>..\..\..\giscanner;$(PythonDirX64)\include;$(PythonDirX64)\PC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>%(ForcedIncludeFiles);io.h</ForcedIncludeFiles>
@@ -160,7 +164,7 @@
     <Link>
       <OutputFile>$(OutDir)$(ProjectName).pyd</OutputFile>
       <AdditionalLibraryDirectories>$(PythonDirX64)\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>

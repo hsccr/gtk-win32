@@ -134,8 +134,8 @@ copy ..\..\..\girepository\gdump.c $(CopyDir)\share\gobject-introspection-$(ApiV
 mkdir $(CopyDir)\lib
 copy $(BinDir)\girepository-$(ApiVersion).lib $(CopyDir)\lib
 mkdir $(CopyDir)\lib\pkgconfig
-copy ..\gobject-introspection-1.0.pc $(CopyDir)\lib\pkgconfig
-copy ..\gobject-introspection-no-export-1.0.pc $(CopyDir)\lib\pkgconfig
+copy ..\..\..\gobject-introspection-1.0.pc $(CopyDir)\lib\pkgconfig
+copy ..\..\..\gobject-introspection-no-export-1.0.pc $(CopyDir)\lib\pkgconfig
     </GIDoInstall>
     <GIPCFiles>..\gobject-introspection-1.0.pc;..\gobject-introspection-no-export-1.0.pc</GIPCFiles>
     <GIGenPC>$(PythonDir)\python.exe ..\gipc.py --version=$(GIVersion) --prefix=$(CopyDir)</GIGenPC>

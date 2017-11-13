@@ -188,7 +188,7 @@ $items = @{
 	};
 
 	'gobject-introspection' = @{
-		'ArchiveUrl' = 'https://dl.hexchat.net/gtk-win32/src/gobject-introspection-1.48.0.tar.xz'
+		'ArchiveUrl' = 'https://ftp.gnome.org/pub/gnome/sources/gobject-introspection/1.54/gobject-introspection-1.54.1.tar.xz'
 		'Dependencies' = @('glib', 'cairo', 'pkg-config')
 	};
 
@@ -592,8 +592,6 @@ $items['gobject-introspection'].BuildScript = {
 	Remove-Item -Recurse $packageDestination -ErrorAction Ignore
 
 	$originalEnvironment = Swap-Environment $vcvarsEnvironment
-
-	Exec $patch -p1 -i pkg-config-env-var.patch
 
 	$env:PREFIX = "..\..\..\..\..\gtk\$platform"
 	$env:PKG_CONFIG = "..\..\..\..\..\gtk\$platform\bin\pkg-config.exe"

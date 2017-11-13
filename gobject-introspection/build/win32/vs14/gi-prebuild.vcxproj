@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2093D218-190E-4194-9421-3BA7CBF33B10}</ProjectGuid>
-    <RootNamespace>install</RootNamespace>
+    <ProjectGuid>{2093D218-190E-4194-9421-3BA7CBF33B11}</ProjectGuid>
+    <RootNamespace>giprebuild</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -51,25 +51,23 @@
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="gi-install.props" />
+    <Import Project="gi-gen-srcs.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="gi-install.props" />
+    <Import Project="gi-gen-srcs.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="gi-install.props" />
+    <Import Project="gi-gen-srcs.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="gi-install.props" />
+    <Import Project="gi-gen-srcs.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <OutDir Condition="'$(Configuration)'=='Debug'">$(GlibEtcInstallRoot)\</OutDir>
     <ExtensionsToDeleteOnClean Condition="'$(Configuration)'=='Debug'" />
-    <OutDir Condition="'$(Configuration)'=='Release'">$(GlibEtcInstallRoot)\</OutDir>
     <ExtensionsToDeleteOnClean Condition="'$(Configuration)'=='Release'" />
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -82,55 +80,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\..\config.h.win32">
-      <Message Condition="'$(Configuration)'=='Debug'">Installing Build Results...</Message>
-      <AdditionalInputs Condition="'$(Configuration)'=='Debug'">$(GIPCFiles)</AdditionalInputs>
-      <Command Condition="'$(Configuration)'=='Debug'">$(GIDoInstall)</Command>
-      <Outputs Condition="'$(Configuration)'=='Debug'">some_random_file;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)'=='Release'">Installing Build Results...</Message>
-      <AdditionalInputs Condition="'$(Configuration)'=='Release'">$(GIPCFiles)</AdditionalInputs>
-      <Command Condition="'$(Configuration)'=='Release'">$(GIDoInstall)</Command>
-      <Outputs Condition="'$(Configuration)'=='Release'">some_random_file;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)'=='Debug'">Copying config.h from config.h.win32...</Message>
+      <Command Condition="'$(Configuration)'=='Debug'">$(CopyConfigH)</Command>
+      <Outputs Condition="'$(Configuration)'=='Debug'">..\..\..\config.h;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)'=='Release'">Copying config.h from config.h.win32...</Message>
+      <Command Condition="'$(Configuration)'=='Release'">$(CopyConfigH)</Command>
+      <Outputs Condition="'$(Configuration)'=='Release'">..\..\..\config.h;%(Outputs)</Outputs>
     </CustomBuild>
-    <CustomBuild Include="..\gipc.py">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating .pc files...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(GIGenPC)</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(GIPCFiles);%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating .pc files...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(GIGenPCX64)</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(GIPCFiles);%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating .pc files...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(GIGenPC)</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(GIPCFiles);%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating .pc files...</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(GIGenPCX64)</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(GIPCFiles);%(Outputs)</Outputs>
+    <CustomBuild Include="..\..\..\tools\g-ir-tool-template.in">
+      <Message Condition="'$(Configuration)'=='Debug'">Generating Tools Scripts...</Message>
+      <Command Condition="'$(Configuration)'=='Debug'">$(GenToolsScripts)</Command>
+      <Message Condition="'$(Configuration)'=='Release'">Generating Tools Scripts...</Message>
+      <Command Condition="'$(Configuration)'=='Release'">$(GenToolsScripts)</Command>
+      <Outputs Condition="'$(Configuration)'=='Release'">..\..\..\tools\g-ir-scanner;..\..\..\tools\g-ir-doc-tool;..\..\..\tools\g-ir-annotation-tool;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+      <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="g-ir-inspect.vcxproj">
-      <Project>{f4e6621f-a7dd-4863-8ccf-ca04dfc601e3}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="g-ir-compiler.vcxproj">
-      <Project>{5dcb55ce-f32c-4c77-8bf4-b4dad3ec7774}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="g-ir-generate.vcxproj">
-      <Project>{f4e6621f-a7dd-4863-8ccf-ba04dfc601e3}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="girepository.vcxproj">
-      <Project>{23e28245-8fc7-4b41-b1c5-8785bd4366a7}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="_giscanner.vcxproj">
-      <Project>{8311394f-9114-4c97-80f2-51bcaba054c9}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="gi-introspect.vcxproj">
-      <Project>{7a36674c-379d-4989-a978-07124e5f852c}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
