@@ -213,7 +213,7 @@ $items = @{
 	};
 
 	'libpng' = @{
-		'ArchiveUrl' = 'https://dl.hexchat.net/gtk-win32/src/libpng-1.6.29.tar.xz'
+		'ArchiveUrl' = 'http://download.openpkg.org/components/cache/png/libpng-1.6.32.tar.xz'
 		'Dependencies' = @('zlib')
 	};
 
