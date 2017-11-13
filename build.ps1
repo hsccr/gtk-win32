@@ -199,7 +199,7 @@ $items = @{
 
 	'harfbuzz' = @{
 		'ArchiveUrl' = 'https://www.freedesktop.org/software/harfbuzz/release/harfbuzz-1.6.3.tar.bz2'
-		'Dependencies' = @()
+		'Dependencies' = @('freetype', 'glib')
 	};
 
 	'lgi' = @{
